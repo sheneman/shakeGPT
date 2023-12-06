@@ -14,5 +14,10 @@ pip install -r requirements.txt
 ## Train and Inference
 python llm.py
 
+## Output
+Should produce Shakespearish output kind of like this:
+
+![image](https://github.com/sheneman/shakeGPT/assets/3028345/2ced0e45-69ad-4a7a-9824-81bc059b3c70)
+
 
 
