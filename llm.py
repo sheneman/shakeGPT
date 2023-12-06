@@ -172,7 +172,7 @@ class AttentionHead(nn.Module):
     def forward(self, x):
         batchsize, seqlen, embedlen  = x.shape
         query_vector = self.query(x) 
-        key_vector   = self.key(x)  
+        key_vector   = self.key(x)
 
         attention_weights = query_vector @ key_vector.transpose(-2,-1) * torch.sqrt(torch.tensor(embedlen)) 
         attention_weights = attention_weights.masked_fill(self.causal_mask[:seqlen, :seqlen] == 0, float('-inf')) 
@@ -194,7 +194,7 @@ class MultiHeadAttention(nn.Module):
     def __init__(self):
         super().__init__()
 
-        # define NUM_HEADS attention heads, each head able to attend to only an equalsubset of the embedding layer
+        # define NUM_HEADS attention heads, each head able to attend to only an equal-sized subset of the embedding layer
         headspace = EMBEDDING_SIZE // NUM_HEADS
         self.heads  = nn.ModuleList([AttentionHead(headspace) for h in range(NUM_HEADS)])
         self.linear = nn.Linear(EMBEDDING_SIZE, EMBEDDING_SIZE)
