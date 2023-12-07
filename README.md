@@ -19,5 +19,6 @@ Should produce Shakespearish output kind of like this:
 
 ![image](https://github.com/sheneman/shakeGPT/assets/3028345/2ced0e45-69ad-4a7a-9824-81bc059b3c70)
 
-
+## Technical Talk on Transformers
+YouTube video of a recent [TechTalk](https://www.youtube.com/watch?v=CCP7wRrS-aM) on Transformers used for next-token prediction. (December 2023)
 
